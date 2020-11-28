@@ -14,12 +14,13 @@ public:
         // Solution with a monotonic stack
         stack<int> mStack;
         
-        // Generate the results vector
+        // Reverse the linked list
         tuple<int, ListNode*> t = reverseList(head);
         int listSize = get<0>(t);
         ListNode *ptr = get<1>(t);
         vector<int> results(listSize);
-
+        
+        // Generate the results vector
         int i = 0;
         while (ptr) {
             while (!mStack.empty() && ptr->val >= mStack.top()) {
